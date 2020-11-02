@@ -1,0 +1,42 @@
+prototype(NeosRulez.InstagramFeed:Component.InstagramFeedItem) < prototype(Neos.Neos:ContentComponent) {
+
+    renderer = afx`
+        <div class="col-md-3">
+            <div class="neosrulez-instagramfeed-item">
+                <Neos.Fusion:Tag tagName="a" attributes.href={props.link} attributes.class="neosrulez-instagramfeed-item-link" attributes.target="_blank" >
+                    <div @if.render={props.image} class="neosrulez-instagramfeed-item-image">
+                        <Neos.Fusion:Tag tagName="img" attributes.src={props.image} attributes.class="img-fluid" attributes.alt="" />
+                    </div>
+                    <div class="neosrulez-instagramfeed-item-content-wrapper">
+                        <div @if.render={props.location} class="neosrulez-instagramfeed-item-location">
+                            <small><i class="fas fa-map-marker-alt"></i> {props.location}</small>
+                        </div>
+                        <div @if.render={props.text} class="neosrulez-instagramfeed-item-content">
+                            <NeosRulez.InstagramFeed:Class.WrapHashtags text={props.text} mode="remove" />
+                            <div class="neosrulez-instagramfeed-item-hashtags">
+                                <NeosRulez.InstagramFeed:Class.WrapHashtags text={props.text} mode="get" />
+                            </div>
+                        </div>
+                        <div @if.render={props.caption} class="neosrulez-instagramfeed-item-caption">
+                            <small>{props.caption}</small>
+                        </div>
+                    </div>
+                    <div class="row align-items-center">
+                        <div class="col-6 text-center">
+                            <i class="far fa-heart"></i>
+                            <span class="d-block">
+                                {props.likes}
+                            </span>
+                        </div>
+                        <div class="col-6 text-center">
+                            <i class="far fa-comment"></i>
+                            <span class="d-block">
+                                {props.comments}
+                            </span>
+                        </div>
+                    </div>
+                </Neos.Fusion:Tag>
+            </div>
+        </div>
+    `
+}

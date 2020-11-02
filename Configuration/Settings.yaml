@@ -1,0 +1,17 @@
+Neos:
+  Neos:
+    userInterface:
+      translation:
+        autoInclude:
+          NeosRulez.InstagramFeed:
+            - Main
+            - 'NodeTypes/*'
+            - 'NodeTypes/Component/*'
+    nodeTypes:
+      groups:
+        neosrulez_instragramfeed:
+          position: 'end'
+          label: NeosRulez.InstagramFeed:Main:instagramfeed
+    fusion:
+      autoInclude:
+        NeosRulez.InstagramFeed: true

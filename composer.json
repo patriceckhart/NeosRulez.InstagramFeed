@@ -1,0 +1,18 @@
+{
+  "description": "A Neos CMS plugin which show an instagram feed from any public profile.",
+  "type": "neos-package",
+  "name": "neosrulez/instagramfeed",
+  "require": {
+    "neos/neos": "*"
+  },
+  "autoload": {
+    "psr-4": {
+      "NeosRulez\\InstagramFeed": "Classes/"
+    }
+  },
+  "extra": {
+    "neos": {
+      "package-key": "NeosRulez.InstagramFeed"
+    }
+  }
+}

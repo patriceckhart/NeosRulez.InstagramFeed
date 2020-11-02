@@ -1,0 +1,19 @@
+prototype(NeosRulez.InstagramFeed:Component.InstagramFeed) < prototype(Neos.Neos:ContentComponent) {
+    @context.profile = ${node.properties.profile}
+    @context.posts = ${node.properties.posts}
+    feed = NeosRulez.InstagramFeed:Class.Feed {
+        profile = ${profile}
+        posts = ${posts}
+    }
+
+    renderer = afx`
+        <NeosRulez.InstagramFeed:Content.AbstractContent>
+            <NeosRulez.InstagramFeed:Component.InstagramFeedHeader profile={profile} />
+            <div class="row">
+                <Neos.Fusion:Loop items={props.feed} itemName="post" >
+                    <NeosRulez.InstagramFeed:Component.InstagramFeedItem location={post.node.location.name} shortcode={post.node.shortcode} link={'https://www.instagram.com/p/' + post.node.shortcode + '/'} image={post.node.thumbnail_src} text={post.node.edge_media_to_caption.edges[0].node.text} caption={post.node.accessibility_caption} likes={post.node.edge_liked_by.count} comments={post.node.edge_media_to_comment.count} />
+                </Neos.Fusion:Loop>
+            </div>
+        </NeosRulez.InstagramFeed:Content.AbstractContent>
+    `
+}

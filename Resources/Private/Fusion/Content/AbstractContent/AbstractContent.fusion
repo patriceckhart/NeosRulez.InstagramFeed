@@ -1,0 +1,7 @@
+prototype(NeosRulez.InstagramFeed:Content.AbstractContent) < prototype(Neos.Neos:ContentComponent) {
+    renderer = afx`
+        <div class="neosrulez-instagramfeed">
+            {props.content}
+        </div>
+    `
+}
