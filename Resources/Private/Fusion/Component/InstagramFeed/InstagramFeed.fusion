@@ -1,4 +1,4 @@
-prototype(NeosRulez.InstagramFeed:Component.InstagramFeed) < prototype(Neos.Neos:ContentComponent) {
+prototype(NeosRulez.InstagramFeed:Component.InstagramFeed) < prototype(Neos.Fusion:Component) {
     @context.profile = ${node.properties.profile}
     @context.posts = ${node.properties.posts}
     feed = NeosRulez.InstagramFeed:Class.Feed {

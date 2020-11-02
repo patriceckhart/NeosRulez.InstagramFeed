@@ -1,4 +1,4 @@
-prototype(NeosRulez.InstagramFeed:Component.InstagramFeedItem) < prototype(Neos.Neos:ContentComponent) {
+prototype(NeosRulez.InstagramFeed:Component.InstagramFeedItem) < prototype(Neos.Fusion:Component) {
 
     renderer = afx`
         <div class="col-md-3">

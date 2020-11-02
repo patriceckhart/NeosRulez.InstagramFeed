@@ -1,9 +1,9 @@
-prototype(NeosRulez.InstagramFeed:Component.InstagramFeedHeader) < prototype(Neos.Neos:ContentComponent) {
+prototype(NeosRulez.InstagramFeed:Component.InstagramFeedHeader) < prototype(Neos.Fusion:Component) {
     profile = ${this.profile}
     renderer = afx`
         <div class="neosrulez-instagramfeed-header">
             <div class="d-block text-center">
-                <h5>{I18n.translate('NeosRulez.InstagramFeed:NodeTypes.Component.InstagramFeedHeader:header')}: #{props.profile}</h5>
+                <h5>{I18n.translate('NeosRulez.InstagramFeed:NodeTypes.Component.InstagramFeedHeader:header')}: @{props.profile}</h5>
             </div>
         </div>
     `
