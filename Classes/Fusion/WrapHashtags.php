@@ -15,14 +15,18 @@ class WrapHashtags extends AbstractFusionObject
         $text = $this->fusionValue('text');
         $mode = $this->fusionValue('mode');
         $result = false;
-        if($text && $mode) {
-            if($mode == 'remove') {
+        if($text && $mode)
+        {
+            if($mode == 'remove')
+            {
                 $re = '/#\w+\s*/';
                 $result = preg_replace($re, '', $text);
             }
-            if($mode == 'get') {
+            if($mode == 'get')
+            {
                 $hashtags = explode(';', $this->getHashtags($text));
-                foreach ($hashtags as $hashtag) {
+                foreach ($hashtags as $hashtag)
+                {
                     $result .= '<span class="hashtag">' . $hashtag . '</span>';
                 }
             }
@@ -34,7 +38,8 @@ class WrapHashtags extends AbstractFusionObject
     {
         $hashtags = FALSE;
         preg_match_all('/(#\w+)/u', $string, $matches);
-        if ($matches) {
+        if ($matches)
+        {
             $hashtags = implode(';', $matches[0]);
         }
         return $hashtags;
