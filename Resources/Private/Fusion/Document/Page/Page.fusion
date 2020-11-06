@@ -14,7 +14,7 @@ prototype(Neos.Neos:Page) {
         tagName = 'script'
         attributes {
             src = Neos.Fusion:ResourceUri {
-                path = 'resource://NeosRulez.InstagramFeed/Public/JavaScript/components.min.js'
+                path = 'resource://NeosRulez.InstagramFeed/Public/JavaScript/components.js'
             }
         }
     }
