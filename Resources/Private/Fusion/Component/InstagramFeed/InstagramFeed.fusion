@@ -1,19 +1,17 @@
 prototype(NeosRulez.InstagramFeed:Component.InstagramFeed) < prototype(Neos.Fusion:Component) {
     @context.profile = ${node.properties.profile}
-    @context.posts = ${node.properties.posts}
-    feed = NeosRulez.InstagramFeed:Class.Feed {
-        profile = ${profile}
-        posts = ${posts}
-    }
+    @context.md5profile = ${String.md5(node.properties.profile)}
+    posts = ${node.properties.posts}
+    cols = ${node.properties.cols}
+    identifier = ${'neosrulez__instagramfeed__' + String.md5(node.properties.profile)}
+    showHeader = ${node.properties.showHeader}
 
     renderer = afx`
         <NeosRulez.InstagramFeed:Content.AbstractContent>
-            <NeosRulez.InstagramFeed:Component.InstagramFeedHeader profile={profile} />
-            <div class="row">
-                <Neos.Fusion:Loop items={props.feed} itemName="post" >
-                    <NeosRulez.InstagramFeed:Component.InstagramFeedItem location={post.node.location.name} shortcode={post.node.shortcode} link={'https://www.instagram.com/p/' + post.node.shortcode + '/'} image={post.node.thumbnail_src} text={post.node.edge_media_to_caption.edges[0].node.text} caption={post.node.accessibility_caption} likes={post.node.edge_liked_by.count} comments={post.node.edge_media_to_comment.count} />
-                </Neos.Fusion:Loop>
-            </div>
+            <NeosRulez.InstagramFeed:Component.InstagramFeedHeader @if.render={props.showHeader} profile={profile} />
+            <NeosRulez.InstagramFeed:Component.InstagramFeedPreloader id={props.identifier + '__preloader'} />
+            <div id={props.identifier} data-feed={profile} data-md5={md5profile} data-posts={props.posts} data-cols={props.cols} ></div>
         </NeosRulez.InstagramFeed:Content.AbstractContent>
     `
+
 }

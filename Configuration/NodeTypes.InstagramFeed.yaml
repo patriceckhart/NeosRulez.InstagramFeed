@@ -1,5 +1,5 @@
 'NeosRulez.InstagramFeed:Component.InstagramFeed':
-  label: "${q(node).property('profile') ? I18n.translate('NeosRulez.InstagramFeed:NodeTypes.Component.InstagramFeed:ui.label') + ': #' + q(node).property('profile') : I18n.translate('NeosRulez.InstagramFeed:NodeTypes.Component.InstagramFeed:ui.label')}"
+  label: "${q(node).property('profile') ? I18n.translate('NeosRulez.InstagramFeed:NodeTypes.Component.InstagramFeed:ui.label') + ': @' + q(node).property('profile') : I18n.translate('NeosRulez.InstagramFeed:NodeTypes.Component.InstagramFeed:ui.label')}"
   superTypes:
     'Neos.Neos:Content': true
   ui:
@@ -17,7 +17,15 @@
       ui:
         label: i18n
         showInCreationDialog: true
-        reloadIfChanged: true
+        reloadPageIfChanged: true
+        inspector:
+          group: neosrulez_instragramfeed_group
+    showHeader:
+      type: boolean
+      defaultValue: true
+      ui:
+        label: i18n
+        reloadPageIfChanged: true
         inspector:
           group: neosrulez_instragramfeed_group
     posts:
@@ -26,15 +34,13 @@
       ui:
         label: i18n
         showInCreationDialog: true
-        reloadIfChanged: true
+        reloadPageIfChanged: true
         inspector:
           group: neosrulez_instragramfeed_group
           editor: 'Neos.Neos/Inspector/Editors/SelectBoxEditor'
           editorOptions:
             allowEmpty: false
             values:
-              '0':
-                label: i18n
               '1':
                 label: '1'
               '2':
@@ -235,3 +241,24 @@
                 label: '99'
               '100':
                 label: '100'
+    cols:
+      type: string
+      defaultValue: 'col-md-3'
+      ui:
+        label: i18n
+        showInCreationDialog: true
+        reloadPageIfChanged: true
+        inspector:
+          group: neosrulez_instragramfeed_group
+          editor: 'Neos.Neos/Inspector/Editors/SelectBoxEditor'
+          editorOptions:
+            allowEmpty: false
+            values:
+              'col-md-12':
+                label: '1'
+              'col-md-6':
+                label: '2'
+              'col-md-4':
+                label: '3'
+              'col-md-3':
+                label: '4'

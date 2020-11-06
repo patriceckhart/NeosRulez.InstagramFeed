@@ -1,5 +1,0 @@
-prototype(NeosRulez.InstagramFeed:Class.Feed) {
-    @class = 'NeosRulez\\InstagramFeed\\Fusion\\Feed'
-    profile = false
-    posts = 0
-}

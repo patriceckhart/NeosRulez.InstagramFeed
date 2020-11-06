@@ -1,5 +1,0 @@
-prototype(NeosRulez.InstagramFeed:Class.WrapHashtags) {
-    @class = 'NeosRulez\\InstagramFeed\\Fusion\\WrapHashtags'
-    text = false
-    mode = false
-}

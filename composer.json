@@ -3,7 +3,8 @@
   "type": "neos-package",
   "name": "neosrulez/instagramfeed",
   "require": {
-    "neos/neos": "*"
+    "neos/neos": "*",
+    "neos/fusion-form": "^1.0"
   },
   "autoload": {
     "psr-4": {

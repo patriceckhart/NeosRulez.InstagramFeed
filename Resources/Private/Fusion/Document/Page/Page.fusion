@@ -1,0 +1,21 @@
+prototype(Neos.Neos:Page) {
+    head {
+        instagramScripts = Neos.Fusion:Tag {
+            tagName = 'script'
+            attributes {
+                src = Neos.Fusion:ResourceUri {
+                    path = 'resource://NeosRulez.InstagramFeed/Public/JavaScript/scripts.min.js'
+                }
+            }
+        }
+    }
+    instagramComponents = Neos.Fusion:Tag {
+        @position = 'after reactProd2'
+        tagName = 'script'
+        attributes {
+            src = Neos.Fusion:ResourceUri {
+                path = 'resource://NeosRulez.InstagramFeed/Public/JavaScript/components.min.js'
+            }
+        }
+    }
+}

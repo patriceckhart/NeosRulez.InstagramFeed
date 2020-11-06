@@ -11,8 +11,11 @@
             <trans-unit id="properties.posts" xml:space="preserve">
 				<source>Posts displayed</source>
 			</trans-unit>
-            <trans-unit id="properties.posts.selectBoxEditor.values.0" xml:space="preserve">
-				<source>Show all</source>
+			<trans-unit id="properties.cols" xml:space="preserve">
+				<source>Columns</source>
+			</trans-unit>
+			<trans-unit id="properties.showHeader" xml:space="preserve">
+				<source>Show header with profile name</source>
 			</trans-unit>
             <trans-unit id="groups.neosrulez_instragramfeed_group" xml:space="preserve">
 				<source>Instagram Feed</source>

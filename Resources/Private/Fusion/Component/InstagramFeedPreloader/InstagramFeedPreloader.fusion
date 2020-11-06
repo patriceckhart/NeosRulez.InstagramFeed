@@ -1,0 +1,9 @@
+prototype(NeosRulez.InstagramFeed:Component.InstagramFeedPreloader) < prototype(Neos.Fusion:Component) {
+    renderer = afx`
+        <div id={props.id} class="neosrulez-instagramfeed-preloader">
+            <div class="d-block text-center">
+                <i class="fas fa-spinner fa-pulse mr-2"></i> {I18n.translate('NeosRulez.InstagramFeed:NodeTypes.Component.InstagramFeedPreloader:loading')}
+            </div>
+        </div>
+    `
+}
