@@ -1,4 +1,4 @@
-function init() {
+function initInstagramFeed() {
     var a = document.querySelectorAll('[data-feed]');
     for (var i in a) if (a.hasOwnProperty(i)) {
         var htmlElement = a[i];
@@ -94,4 +94,4 @@ class InstagramFeed extends React.Component {
     }
 }
 
-init();
+initInstagramFeed();
